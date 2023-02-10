@@ -11,10 +11,13 @@ const help = {
 };
 
 function execute(command) {
-	console.log(command);
-
 	command = command.trim();
 	command = command.toLowerCase();
+
+	if (command === "") {
+		return;
+	}
+
 	var result = document.createElement("div");
 	let currCommand = document.getElementById("command-line").cloneNode(true);
 	currCommand.id = "old-command";
@@ -23,18 +26,18 @@ function execute(command) {
 	switch (command) {
 		case "whoami":
 			result.innerHTML +=
-				"<p>Spiritually speaking, we all are spirit soul stuck in this hooman body.</p>";
+				"<p class='typing'>Spiritually speaking, we all are spirit soul stuck in this hooman body.</p>";
 			break;
 		case "help":
 			for (const key in help) {
-				result.innerHTML += `<p class="listcommands"><span>${key}</span> <span>${help[key]}</span></p>`;
+				result.innerHTML += `<p class="listcommands typing"><span class="command-key">${key}</span> <span>${help[key]}</span></p>`;
 			}
 			break;
 		case "clear":
 			terminal.innerHTML = "";
 			return;
 		default:
-			result.innerHTML += "<p>wrong command</p>";
+			result.innerHTML += `<p class='error typing'>${command}: Command not found. For a list of commands, type '<span class="command-key">help</span>'.</p>`;
 			break;
 	}
 	terminal.appendChild(result);

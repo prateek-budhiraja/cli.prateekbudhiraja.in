@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
 
 :root {
   --bg: #1B2430;
@@ -11,6 +11,7 @@ body {
   background: var(--bg);
   font-family: 'Rubik', sans-serif;
   color: var(--bluish);
+  padding: 10px;
 }
 
 #command {
@@ -35,6 +36,11 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 20px;
+}
+
+div:has(> #old-command) {
+  margin-bottom: 20px;
 }
 
 #old-command>span {
@@ -65,11 +71,35 @@ body {
 
 #typer {
   color: var(--purple) !important;
+  font-weight: 500;
 }
 
 textarea {
   position: absolute;
   left: -1000px;
+}
+
+.command-key {
+  color: var(--purple);
+  text-shadow: 0 0 4px #adb4d2;
+  font-weight: 500;
+}
+
+
+.listcommands {
+  display: grid;
+  max-width: 500px;
+  grid-template-columns: 1fr 2fr;
+  margin: 10px 0;
+}
+
+.error {
+  color: #ED4C67;
+  margin-top: -20px;
+}
+
+div:has(> .error) {
+  margin-bottom: 0 !important;
 }
 
 @keyframes blinker {
@@ -79,5 +109,23 @@ textarea {
 
   to {
     opacity: 0;
+  }
+}
+
+
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  animation: typing 500ms;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
   }
 }
