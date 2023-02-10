@@ -30,6 +30,9 @@ function execute(command) {
 				result.innerHTML += `<p class="listcommands"><span>${key}</span> <span>${help[key]}</span></p>`;
 			}
 			break;
+		case "clear":
+			terminal.innerHTML = "";
+			return;
 		default:
 			result.innerHTML += "<p>wrong command</p>";
 			break;
