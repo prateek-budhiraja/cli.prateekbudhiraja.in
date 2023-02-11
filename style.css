@@ -13,8 +13,8 @@
 
 body {
   background: var(--bg);
-  font-family: 'Rubik', sans-serif;
   color: var(--bluish);
+  font-family: 'Rubik', sans-serif;
   padding: 10px;
   font-size: 18px;
 }
@@ -25,23 +25,18 @@ a {
 
 a:hover {
   text-decoration: none;
-}
-
-#command {
-  border: none;
-  resize: none;
-  caret-color: transparent;
-}
-
-#command:focus {
-  border: none;
-  outline: none;
+  text-shadow: 0 0 2px #adb4d2;
 }
 
 #command-line {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+#command-line>span {
+  color: var(--white);
+  display: inline-block;
 }
 
 #old-command {
@@ -60,23 +55,12 @@ div:has(> #old-command) {
   display: inline-block;
 }
 
-#command-line>span {
-  color: var(--white);
-  display: inline-block;
-}
-
 .cursor {
   font-size: 12px;
-  color: var(--purple);
   background-color: var(--purple);
-  position: relative;
   opacity: 1;
   height: 1.5em;
-  width: 10px;
-  max-width: 10px;
-  overflow: hidden;
-  display: inline-block;
-  text-decoration: blink;
+  width: 8px;
   margin-left: -8px;
   animation: blinker 1.2s linear infinite;
 }
@@ -88,21 +72,21 @@ div:has(> #old-command) {
 
 textarea {
   position: absolute;
-  left: -1000px;
+  left: -1200px;
 }
 
-.command-key {
+.glow {
   color: var(--purple);
   text-shadow: 0 0 2px #adb4d2;
   font-weight: 500;
 }
 
-.projects {
+.projectgrid {
   max-width: 925px !important;
   grid-template-columns: 1fr 6fr !important;
 }
 
-.listcommands {
+.grid {
   display: grid;
   max-width: 500px;
   grid-template-columns: 1fr 3fr;
@@ -119,17 +103,7 @@ div:has(> .error) {
   margin-bottom: 0 !important;
 }
 
-@keyframes blinker {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-.intro {
+.whois {
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -146,7 +120,17 @@ div:has(> .error) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
-  animation: typing 500ms;
+  animation: typing 700ms;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes typing {
