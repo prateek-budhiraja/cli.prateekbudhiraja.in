@@ -22,31 +22,31 @@ function execute(command) {
 			break;
 		case "help":
 			for (const key in help) {
-				result.innerHTML += `<p class="listcommands typing"><span class="command-key">${key}</span> <span>${help[key]}</span></p>`;
+				result.innerHTML += `<p class="grid typing"><span class="glow">${key}</span> <span>${help[key]}</span></p>`;
 			}
 			break;
 		case "hi":
 		case "hello":
 			for (const key in socials) {
-				result.innerHTML += `<p class="listcommands typing"><span class="command-key">${key}</span> <a href=${socials[key][1]} target="_blank">${socials[key][0]}</a></p>`;
+				result.innerHTML += `<p class="grid typing"><span class="glow">${key}</span> <a href=${socials[key][1]} target="_blank">${socials[key][0]}</a></p>`;
 			}
 			break;
 		case "projects":
 			for (const key in projects) {
-				result.innerHTML += `<p class="listcommands projects typing"><a href=${projects[key][0]} target="_blank">${key}</a><span>${projects[key][1]}</span></p>`;
+				result.innerHTML += `<p class="grid projectgrid typing"><a href=${projects[key][0]} target="_blank">${key}</a><span>${projects[key][1]}</span></p>`;
 			}
 			break;
 		case "projects":
 			result.innerHTML += "<p class='typing'></p>";
 			break;
 		case "whois":
-			result.innerHTML += "<p class='intro'>" + whois + "</p>";
+			result.innerHTML += "<p class='whois'>" + whois + "</p>";
 			break;
 		case "clear":
 			terminal.innerHTML = "";
 			return;
 		default:
-			result.innerHTML += `<p class='error typing'>${command}: Command not found. For a list of commands, type '<span class="command-key">help</span>'.</p>`;
+			result.innerHTML += `<p class='error typing'>${command}: Command not found. For a list of commands, type '<span class="glow">help</span>'.</p>`;
 			break;
 	}
 	terminal.appendChild(result);
