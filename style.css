@@ -23,6 +23,10 @@ a {
   color: var(--purple);
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 #command {
   border: none;
   resize: none;
