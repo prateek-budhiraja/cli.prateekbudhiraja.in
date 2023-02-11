@@ -142,3 +142,35 @@ div:has(> .error) {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 520px) {
+  body {
+    padding: 2px;
+  }
+
+  .projectgrid {
+    width: 100dvw;
+    gap: 2rem;
+    /* grid-template-columns: 100px 300px; */
+  }
+
+  /* .projectgrid span {
+    text-overflow: ellipsis;
+  } */
+
+  .grid {
+    max-width: 100dvw;
+  }
+
+  .typing {
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: normal;
+    animation: none;
+  }
+
+  .whois {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
