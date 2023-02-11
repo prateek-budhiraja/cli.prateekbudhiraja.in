@@ -7,18 +7,26 @@
   --white: #E9D5DA;
 }
 
+::selection {
+  background: var(--white);
+}
+
 body {
   background: var(--bg);
   font-family: 'Rubik', sans-serif;
   color: var(--bluish);
   padding: 10px;
+  font-size: 18px;
+}
+
+a {
+  color: var(--purple);
 }
 
 #command {
   border: none;
   resize: none;
   caret-color: transparent;
-  font-size: 16px;
 }
 
 #command:focus {
@@ -81,20 +89,25 @@ textarea {
 
 .command-key {
   color: var(--purple);
-  text-shadow: 0 0 4px #adb4d2;
+  text-shadow: 0 0 2px #adb4d2;
   font-weight: 500;
 }
 
+.projects {
+  max-width: 925px !important;
+  grid-template-columns: 1fr 6fr !important;
+}
 
 .listcommands {
   display: grid;
   max-width: 500px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
   margin: 10px 0;
 }
 
 .error {
-  color: #ED4C67;
+  padding-left: 0 !important;
+  color: #ea8685;
   margin-top: -20px;
 }
 
@@ -112,8 +125,20 @@ div:has(> .error) {
   }
 }
 
+.intro {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#info span {
+  font-size: 16px;
+  color: var(--purple);
+  font-weight: 700;
+}
 
 .typing {
+  padding-left: 30px;
+  padding-right: 30px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
