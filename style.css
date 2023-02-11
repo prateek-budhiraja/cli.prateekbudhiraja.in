@@ -146,20 +146,32 @@ div:has(> .error) {
 @media screen and (max-width: 520px) {
   body {
     padding: 2px;
+    font-size: 14px;
+  }
+
+  pre {
+    display: none;
   }
 
   .projectgrid {
-    width: 100dvw;
-    gap: 2rem;
-    /* grid-template-columns: 100px 300px; */
+    width: 90vw;
   }
 
-  /* .projectgrid span {
-    text-overflow: ellipsis;
-  } */
+  .projectgrid>a {
+    margin-bottom: 5px;
+    display: inline-block;
+  }
 
   .grid {
-    max-width: 100dvw;
+    display: block;
+  }
+
+  .grid>span {
+    display: block;
+  }
+
+  .grid>.glow {
+    margin-bottom: 5px;
   }
 
   .typing {
